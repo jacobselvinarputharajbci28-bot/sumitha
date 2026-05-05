@@ -1,0 +1,12 @@
+# Read input integers
+a = int(input())
+b = int(input())
+
+# 1. Integer division
+print(a // b)
+
+# 2. Modulo operator
+print(a % b)
+
+# 3. Divmod (returns a tuple of both)
+print(divmod(a, b))
