@@ -1,0 +1,17 @@
+from collections import deque
+
+for _ in range(int(input())):
+    n, dq = int(input()), deque(map(int, input().split()))
+    last_picked = float('inf')
+    possible = True
+    
+    while dq:
+        # Pick the larger of the two ends
+        current = dq.popleft() if dq[0] >= dq[-1] else dq.pop()
+        
+        if current > last_picked:
+            possible = False
+            break
+        last_picked = current
+        
+    print("Yes" if possible else "No")
