@@ -1,0 +1,11 @@
+import numpy
+
+# Read the two arrays as lists of integers
+A = numpy.array(list(map(int, input().split())))
+B = numpy.array(list(map(int, input().split())))
+
+# Calculate and print the inner product
+print(numpy.inner(A, B))
+
+# Calculate and print the outer product
+print(numpy.outer(A, B))
