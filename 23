@@ -1,0 +1,12 @@
+import numpy
+
+# Required for specific spacing/alignment in HackerRank's output format
+numpy.set_printoptions(legacy='1.13')
+
+# Read input and convert to a numpy array of floats
+A = numpy.array(input().split(), float)
+
+# Print floor, ceil, and rint on separate lines
+print(numpy.floor(A))
+print(numpy.ceil(A))
+print(numpy.rint(A))
