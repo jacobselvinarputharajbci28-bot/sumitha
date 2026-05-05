@@ -1,0 +1,32 @@
+import re
+
+def is_valid_float():
+    # Read the number of test cases
+    try:
+        t = int(input())
+    except EOFError:
+        return
+
+    for _ in range(t):
+        s = input().strip()
+        
+        try:
+            # 1. Must be convertible to float
+            # 2. Must contain exactly one '.'
+            # 3. Must not end with '.' (as per '12.' being False)
+            
+            # The float conversion handles signs (+, -) and valid digits
+            float_val = float(s)
+            
+            # Check if there is a '.' and at least one character after it
+            if '.' in s and s.index('.') < len(s) - 1:
+                print(True)
+            else:
+                print(False)
+                
+        except ValueError:
+            # If conversion fails (contains letters or symbols), it's False
+            print(False)
+
+if __name__ == "__main__":
+    is_valid_float()
