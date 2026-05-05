@@ -1,0 +1,20 @@
+# Read the number of test cases
+t = int(input())
+
+for _ in range(t):
+    try:
+        # Read A and B, then attempt to convert them to integers
+        a, b = input().split()
+        
+        # Perform integer division
+        # In Python 3, // is used for integer (floor) division
+        print(int(a) // int(b))
+        
+    except ZeroDivisionError as e:
+        # Catches division by zero
+        print("Error Code:", e)
+        
+    except ValueError as e:
+        # Catches invalid literals (like '$' or '#') during int() conversion
+        print("Error Code:", e)
+
