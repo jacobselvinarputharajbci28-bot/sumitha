@@ -1,0 +1,10 @@
+# Read the three input integers
+a = int(input())
+b = int(input())
+m = int(input())
+
+# First line: a raised to the power of b
+print(pow(a, b))
+
+# Second line: (a raised to the power of b) modulo m
+print(pow(a, b, m))
