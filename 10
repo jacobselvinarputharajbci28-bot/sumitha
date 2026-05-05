@@ -1,0 +1,9 @@
+
+
+def product(fracs):
+    # reduce(function, iterable) applies the multiplication cumulatively
+    t = reduce(lambda x, y: x * y, fracs)
+    return t.numerator, t.denominator
+
+
+
