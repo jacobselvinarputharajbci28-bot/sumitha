@@ -1,0 +1,9 @@
+def wrapper(f):
+    def fun(l):
+        # Extract the last 10 digits and format as +91 xxxxx xxxxx
+        standardized_list = [f"+91 {n[-10:-5]} {n[-5:]}" for n in l]
+        # Call the original function with the standardized list
+        return f(standardized_list)
+    return fun
+
+
