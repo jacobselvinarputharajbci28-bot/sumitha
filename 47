@@ -1,0 +1,9 @@
+# Read four integers from separate lines
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+
+# Calculate and print a**b + c**d
+# Python handles the massive result automatically
+print(pow(a, b) + pow(c, d))
