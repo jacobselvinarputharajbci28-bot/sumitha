@@ -1,0 +1,11 @@
+from itertools import product
+
+# Read input and convert space-separated strings into lists of integers
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+
+# Compute the cartesian product
+result = product(A, B)
+
+# Print the tuples separated by a space
+print(*(result))
