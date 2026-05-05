@@ -1,0 +1,10 @@
+import numpy
+
+# This line is required to fix the alignment/spacing for the judge
+numpy.set_printoptions(legacy='1.13')
+
+# Read N (rows) and M (columns)
+n, m = map(int, input().split())
+
+# Create and print the N x M array with the main diagonal as 1s
+print(numpy.eye(n, m))
