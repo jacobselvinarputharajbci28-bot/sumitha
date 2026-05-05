@@ -1,0 +1,19 @@
+import numpy
+
+# Read the dimension of the square matrix
+n = int(input())
+
+# Read the next N lines as a list of lists and convert to a NumPy array
+matrix = []
+for _ in range(n):
+    row = list(map(float, input().split()))
+    matrix.append(row)
+
+# Convert to a NumPy array
+a = numpy.array(matrix)
+
+# Calculate the determinant
+determinant = numpy.linalg.det(a)
+
+# Round the result to 2 decimal places and print
+print(round(determinant, 2))
