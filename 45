@@ -1,0 +1,17 @@
+import re
+
+# Read the number of test cases
+try:
+    t_str = input().strip()
+    if t_str:
+        t = int(t_str)
+        for _ in range(t):
+            # Read each regex pattern and strip whitespace
+            s = input().strip()
+            try:
+                re.compile(s)
+                print("True")
+            except re.error:
+                print("False")
+except EOFError:
+    pass
