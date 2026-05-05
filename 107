@@ -1,0 +1,20 @@
+from collections import namedtuple
+
+if __name__ == '__main__':
+    n = int(input())
+    # Read headers and create the namedtuple class
+    # .split() handles variable whitespace between column names
+    columns = input().split()
+    Student = namedtuple('Student', columns)
+    
+    total_marks = 0
+    
+    for _ in range(n):
+        # Create a student instance by unpacking the split line
+        # This works even if the order of columns changes!
+        row_data = input().split()
+        student = Student(*row_data)
+        total_marks += int(student.MARKS)
+        
+    # Calculate and format the average
+    print(f"{total_marks / n:.2f}")
