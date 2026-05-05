@@ -1,0 +1,18 @@
+import numpy
+
+# Reading N and M
+n, m = map(int, input().split())
+
+# Reading Array A
+a = numpy.array([input().split() for _ in range(n)], int)
+
+# Reading Array B
+b = numpy.array([input().split() for _ in range(n)], int)
+
+# Performing operations
+print(a + b)            # Add
+print(a - b)            # Subtract
+print(a * b)            # Multiply
+print(a // b)           # Integer Division (Floor)
+print(a % b)            # Mod
+print(a ** b)           # Power
