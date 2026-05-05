@@ -1,0 +1,7 @@
+if __name__ == '__main__':
+    n = int(raw_input()) # Use raw_input for Python 2
+    
+    # Map the integers and convert the map object to a tuple
+    t = tuple(map(int, raw_input().split()))
+    
+    print hash(t)
