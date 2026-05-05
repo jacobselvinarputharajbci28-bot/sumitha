@@ -1,0 +1,20 @@
+import re
+
+# Define vowels and consonants as strings
+vowels = "aeiouAEIOU"
+consonants = "qwrtypsdfghjklzxcvbnmQWRTYPSDFGHJKLZXCVBNM"
+
+# Regex breakdown:
+# (?<=[%s])  : Lookbehind - must have a consonant before
+# ([%s]{2,}) : Capturing group - 2 or more vowels
+# (?=[%s])   : Lookahead - must have a consonant after
+pattern = r'(?<=[%s])([%s]{2,})(?=[%s])' % (consonants, vowels, consonants)
+
+s = input().strip()
+matches = re.findall(pattern, s)
+
+if matches:
+    print(*matches, sep='\n')
+else:
+    print(-1)
+
