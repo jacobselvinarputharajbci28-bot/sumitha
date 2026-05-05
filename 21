@@ -1,0 +1,19 @@
+import numpy
+
+# Read N (rows) and M (columns)
+n, m = map(int, input().split())
+
+# Read the matrix and convert to a NumPy array of integers
+data = []
+for _ in range(n):
+    data.append(list(map(int, input().split())))
+
+my_array = numpy.array(data)
+
+# Step 1: Find the minimum along axis 1 (the rows)
+min_along_axis_1 = numpy.min(my_array, axis=1)
+
+# Step 2: Find the maximum of those results
+result = numpy.max(min_along_axis_1)
+
+print(result)
