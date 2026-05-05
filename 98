@@ -1,0 +1,15 @@
+if __name__ == '__main__':
+    # Read English subscribers
+    n = int(input())
+    english_subs = set(map(int, input().split()))
+    
+    # Read French subscribers
+    m = int(input())
+    french_subs = set(map(int, input().split()))
+    
+    # Find students subscribed ONLY to English
+    # Use the .difference() method or the '-' operator
+    only_english = english_subs.difference(french_subs)
+    
+    # Print the count
+    print(len(only_english))
