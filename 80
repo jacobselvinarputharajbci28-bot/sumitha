@@ -1,0 +1,11 @@
+
+import textwrap
+
+def wrap(string, max_width):
+    # textwrap.fill() takes the string and wraps it into a 
+    # paragraph of width 'max_width', returning a single string
+    return textwrap.fill(string, max_width)
+
+
+
+
