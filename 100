@@ -1,0 +1,22 @@
+if __name__ == '__main__':
+    # Read n and m (though not strictly needed for the logic in Python)
+    n, m = map(int, input().split())
+    
+    # Read the main array
+    array = list(map(int, input().split()))
+    
+    # Read sets A and B
+    # Converting these to sets is vital for performance (O(1) lookup)
+    set_a = set(map(int, input().split()))
+    set_b = set(map(int, input().split()))
+    
+    happiness = 0
+    
+    # Iterate through the array and update happiness
+    for num in array:
+        if num in set_a:
+            happiness += 1
+        elif num in set_b:
+            happiness -= 1
+            
+    print(happiness)
