@@ -1,0 +1,6 @@
+# Read x and k
+x, k = map(int, input().split())
+
+# In Python 3, input() returns a string, so we use eval() 
+# to calculate the polynomial using the 'x' we defined above.
+print(eval(input()) == k)
