@@ -1,0 +1,20 @@
+from collections import deque
+
+if __name__ == '__main__':
+    n = int(input())
+    d = deque()
+    
+    for _ in range(n):
+        # Read the command and potential value
+        line = input().split()
+        command = line[0]
+        
+        # Check if the command has an associated value (like append 1)
+        if len(line) > 1:
+            getattr(d, command)(line[1])
+        else:
+            # For commands like pop and popleft
+            getattr(d, command)()
+            
+    # Print elements separated by spaces
+    print(*d)
