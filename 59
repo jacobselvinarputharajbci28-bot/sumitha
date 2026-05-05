@@ -1,0 +1,21 @@
+import re
+
+# Read N (rows) and M (columns)
+n, m = map(int, input().split())
+
+# Read the matrix rows
+matrix = [input() for _ in range(n)]
+
+# 1. Transpose and Join: 
+# Zip the rows to group columns, then join everything into one string.
+# *matrix unpacks the list of strings into separate arguments for zip.
+decoded_string = "".join(["".join(column) for column in zip(*matrix)])
+
+# 2. Regex Substitution:
+# Look for a sequence of non-alphanumeric characters (\W+) 
+# that are sandwiched between two alphanumeric characters ([a-zA-Z0-9]).
+# \1 and \2 preserve the surrounding characters while replacing the middle with a space.
+result = re.sub(r"([a-zA-Z0-9])\W+([a-zA-Z0-9])", r"\1 \2", decoded_string)
+
+print(result)
+
