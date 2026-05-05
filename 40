@@ -1,0 +1,13 @@
+# Read N (students) and X (subjects)
+n, x = map(int, input().split())
+
+# Read each subject's marks into a list
+sheet = []
+for _ in range(x):
+    sheet.append(list(map(float, input().split())))
+
+# Use zip(*sheet) to group marks by student instead of by subject
+for student_marks in zip(*sheet):
+    # Calculate and print the average for each student
+    average = sum(student_marks) / x
+    print(f"{average:.1f}")
