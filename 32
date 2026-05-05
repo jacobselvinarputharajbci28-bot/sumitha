@@ -1,0 +1,23 @@
+import re
+import email.utils
+
+# Pattern Breakdown:
+# ^[a-zA-Z]      : Starts with an English alphabetical character.
+# [a-zA-Z0-9._-]* : Followed by zero or more alphanumeric, ., _, or - characters.
+# @              : Literal @ symbol.
+# [a-zA-Z]+       : Domain contains only alphabetical characters.
+# \.             : Literal dot.
+# [a-zA-Z]{1,3}$ : Extension is alphabetical and 1, 2, or 3 characters long.
+pattern = r'^[a-zA-Z][a-zA-Z0-9._-]*@[a-zA-Z]+\.[a-zA-Z]{1,3}$'
+
+n = int(input())
+
+for _ in range(n):
+    line = input()
+    # parseaddr returns a tuple: (name, email_address)
+    parsed_addr = email.utils.parseaddr(line)
+    email_addr = parsed_addr[1]
+    
+    if re.match(pattern, email_addr):
+        # formataddr recreates the "Name <email@domain.ext>" string
+        print(email.utils.formataddr(parsed_addr))
