@@ -1,0 +1,19 @@
+import re
+
+# Read the number of inputs
+n = int(input())
+
+# Iterate through each input string
+for _ in range(n):
+    # Read the phone number string
+    phone_number = input()
+    
+    # Regex Breakdown:
+    # ^     : Asserts the start of the string.
+    # [789] : Matches the first digit, which must be 7, 8, or 9.
+    # \d{9} : Matches exactly 9 more digits (0-9).
+    # $     : Asserts the end of the string to ensure it's exactly 10 digits total.
+    if re.match(r'^[789]\d{9}$', phone_number):
+        print("YES")
+    else:
+        print("NO")
