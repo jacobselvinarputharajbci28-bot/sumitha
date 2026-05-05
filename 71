@@ -1,0 +1,14 @@
+from itertools import permutations
+
+# Read the input string and the integer k
+# input_data[0] is the string, input_data[1] is the size k
+input_data = input().split()
+s = sorted(input_data[0])  # Sorting the string lexicographically
+k = int(input_data[1])
+
+# Generate permutations of size k
+result = list(permutations(s, k))
+
+# Print each permutation joined as a string
+for p in result:
+    print("".join(p))
