@@ -1,0 +1,16 @@
+import re
+
+# Read the input string
+s = input().strip()
+
+# Regex breakdown:
+# ([a-zA-Z0-9]) : Group 1 captures the first alphanumeric character
+# \1            : Matches the exact same character as Group 1 (consecutive repeat)
+m = re.search(r'([a-zA-Z0-9])\1', s)
+
+# If a match is found, print the first captured group (the repeating char)
+# Otherwise, print -1
+if m:
+    print(m.group(1))
+else:
+    print(-1)
