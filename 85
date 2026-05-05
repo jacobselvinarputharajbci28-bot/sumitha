@@ -1,0 +1,17 @@
+if __name__ == '__main__':
+    s = input()
+    
+    # Check for Alphanumeric (a-z, A-Z, 0-9)
+    print(any(char.isalnum() for char in s))
+    
+    # Check for Alphabetical (a-z, A-Z)
+    print(any(char.isalpha() for char in s))
+    
+    # Check for Digits (0-9)
+    print(any(char.isdigit() for char in s))
+    
+    # Check for Lowercase (a-z)
+    print(any(char.islower() for char in s))
+    
+    # Check for Uppercase (A-Z)
+    print(any(char.isupper() for char in s))
