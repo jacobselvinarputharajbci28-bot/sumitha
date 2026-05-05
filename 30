@@ -1,0 +1,18 @@
+import re
+
+# Regex Breakdown:
+# (?<!^)       : Lookbehind to ensure the '#' is not at the start of a line (avoids ID selectors).
+# #            : Matches the literal '#' symbol.
+# (?:[0-9a-fA-F]{3}){1,2} : Matches exactly 3 or 6 hex digits.
+# (?![0-9a-fA-F]) : Negative lookahead to ensure no extra hex digits follow (prevents partial matches).
+pattern = r'(?<!^)#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})(?![0-9a-fA-F])'
+
+n = int(input())
+
+for _ in range(n):
+    line = input()
+    # Find all matches in the current line
+    matches = re.findall(pattern, line)
+    if matches:
+        for color in matches:
+            print(color)
