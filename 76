@@ -1,0 +1,23 @@
+import string
+
+def print_rangoli(size):
+    # Get all lowercase letters
+    alphabet = string.ascii_lowercase
+    
+    # List to store the lines of the rangoli
+    lines = []
+    
+    for i in range(size):
+        # Slice the alphabet to get the letters needed for this row
+        # We go from the 'size' letter down to the 'i' letter
+        s = "-".join(alphabet[size - 1 : i : -1] + alphabet[i : size])
+        
+        # Center the string with dashes based on the total width (4*size - 3)
+        lines.append(s.center(4 * size - 3, "-"))
+    
+
+    rangoli = "\n".join(lines[::-1] + lines[1:])
+    print(rangoli)
+
+   
+
