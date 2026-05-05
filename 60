@@ -1,0 +1,12 @@
+import re
+
+# Matches digits from 100,000 to 999,999 inclusive
+# ^[1-9] ensures the first digit isn't zero
+# \d{5}$ ensures exactly 5 more digits follow
+regex_integer_in_range = r"^[1-9]\d{5}$"
+
+# Finds digits that repeat after exactly one other digit
+# (\d) captures a digit
+# (?=\d\1) is a lookahead that looks for [any digit] followed by the captured digit
+regex_alternating_repetitive_digit_pair = r"(\d)(?=\d\1)"
+
