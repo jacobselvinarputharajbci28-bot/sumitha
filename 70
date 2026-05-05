@@ -1,0 +1,15 @@
+from itertools import combinations
+
+# Read the input string and the integer k
+input_data = input().split()
+s = sorted(input_data[0])  # Sort the string characters alphabetically
+k = int(input_data[1])
+
+# Loop through each size from 1 to k (inclusive)
+for i in range(1, k + 1):
+    # Generate combinations of current size i
+    results = list(combinations(s, i))
+    
+    # Print each combination joined as a string
+    for combo in results:
+        print("".join(combo))
