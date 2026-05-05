@@ -1,0 +1,15 @@
+if __name__ == '__main__':
+    # Read English subscribers
+    n = int(input())
+    english_subs = set(map(int, input().split()))
+    
+    # Read French subscribers
+    m = int(input())
+    french_subs = set(map(int, input().split()))
+    
+    # Symmetric Difference finds students with exactly one subscription
+    # You can use the .symmetric_difference() method or the '^' operator
+    exactly_one = english_subs.symmetric_difference(french_subs)
+    
+    # Print the total count
+    print(len(exactly_one))
