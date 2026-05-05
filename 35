@@ -1,0 +1,23 @@
+import re
+
+def change_symbols(match):
+    if match.group(0) == "&&":
+        return "and"
+    else:
+        return "or"
+
+# Read number of lines
+n = int(input())
+
+for _ in range(n):
+    line = input()
+    
+    # Use positive lookbehind and lookahead to ensure spaces on both sides
+    # This prevents matching symbols inside words or triple symbols like &&&
+    pattern = r"(?<= )(&&|\|\|)(?= )"
+    
+    # We run it twice to catch overlapping matches in the same line
+    result = re.sub(pattern, change_symbols, line)
+    result = re.sub(pattern, change_symbols, result)
+    
+    print(result)
