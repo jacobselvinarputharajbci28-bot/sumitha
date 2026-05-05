@@ -1,0 +1,13 @@
+import numpy
+
+# Read N (rows of A), M (rows of B), and P (columns)
+n, m, p = map(int, input().split())
+
+# Read the next N lines for matrix A
+array_1 = numpy.array([input().split() for _ in range(n)], int)
+
+# Read the next M lines for matrix B
+array_2 = numpy.array([input().split() for _ in range(m)], int)
+
+# Concatenate along axis 0 (the default)
+print(numpy.concatenate((array_1, array_2), axis=0))
