@@ -1,0 +1,17 @@
+if __name__ == '__main__':
+    # Read group size K
+    k = int(input())
+    
+    # Read the room numbers as a list of integers
+    rooms = list(map(int, input().split()))
+    
+    # Create a set of unique room numbers
+    unique_rooms = set(rooms)
+    
+    # Apply the mathematical formula
+    # sum(unique_rooms) * k gives the total if everyone had K members
+    # sum(rooms) is the actual total count
+    # Dividing by (k-1) isolates the single Captain's room number
+    captain_room = (sum(unique_rooms) * k - sum(rooms)) // (k - 1)
+    
+    print(captain_room)
