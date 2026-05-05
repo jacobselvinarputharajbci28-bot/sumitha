@@ -1,0 +1,20 @@
+def average(array):
+    # Convert the list to a set to keep only distinct heights
+    distinct_heights = set(array)
+    
+    # Calculate the average
+    total_sum = sum(distinct_heights)
+    number_of_elements = len(distinct_heights)
+    
+    result = total_sum / number_of_elements
+    
+    # Return the result (the rounding is usually handled by the 
+    # print formatting in the challenge template)
+    return result
+
+    arr = list(map(int, input().split()))
+    result = average(arr)
+    print(result)
+
+    # your code goes here
+
