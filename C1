@@ -1,0 +1,21 @@
+void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n) {
+    int *ptr=malloc((m+n)*4),k=-1,i=0,j=0;
+    while(i<m&&j<n){
+        //printf("%d  ",i);
+        if(nums1[i]>nums2[j]){
+            ptr[++k]=nums2[j++];
+        }else{
+            ptr[++k]=nums1[i++];
+            }
+    }
+    while(i<m){
+        ptr[++k]=nums1[i++];
+    }
+    while(j<n){
+        ptr[++k]=nums2[j++];
+    }
+   for(int i=0;i<nums1Size;i++){
+    if(i<=k)nums1[i]=ptr[i];
+    else nums1[i]=0;
+   }
+}    
