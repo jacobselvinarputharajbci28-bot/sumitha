@@ -1,0 +1,41 @@
+int c[] = {16577, 4193, 1073, 281, 77, 23, 8, 1};
+
+void k_insert_sort(int* arr, int size, int k) {
+    int i, j, tmp;
+    for (i = k; i < size; i++) {
+        j = i;
+        while (j - k >= 0 && arr[j - k] > arr[j]) {
+            tmp = arr[j];
+            arr[j] = arr[j - k];
+            arr[j - k] = tmp;
+            j -= k;
+        }
+    }
+}
+
+void shell_sort(int* arr, int size) {
+    for (int i = 0; i < 8; i++) {
+        if (c[i] <= size) {
+            k_insert_sort(arr, size, c[i]);
+        }
+    }
+}
+
+void wiggleSort(int* nums, int numsSize) {
+    int* arr = malloc(numsSize * sizeof(int));
+    memcpy(arr, nums, numsSize * sizeof(int));
+    shell_sort(arr, numsSize);
+    
+    int left = (numsSize + 1) / 2 - 1; 
+    int right = numsSize - 1;
+
+    for (int i = 0; i < numsSize; i++) {
+        if (i % 2 == 0) {
+            nums[i] = arr[left--]; 
+        } else {
+            nums[i] = arr[right--]; 
+        }
+    }
+
+    free(arr);
+}
