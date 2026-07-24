@@ -1,0 +1,46 @@
+void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n)
+{
+    int *copy;
+    int i;
+    int k;
+    int d;
+
+    copy = malloc(nums1Size * sizeof(int));
+    if (!copy)
+        return ;
+    i = 0;
+    k = 0;
+    d = 0;
+    while (i < nums1Size)
+    {
+        copy[i] = nums1[i];
+        i++;
+    }
+    i = 0;
+    while (d < nums1Size)
+    {
+        if (!m)
+        {
+            nums1[d] = nums2[k];
+            k++;
+        }
+        else if (!n)
+        {
+            nums1[d] = copy[i];
+            i++;
+        }
+        else if (copy[i] < nums2[k])
+        {
+            nums1[d] = copy[i];
+            i++;
+            m--;
+        }
+        else
+        {
+            nums1[d] = nums2[k];
+            k++;
+            n--;
+        }
+        d++;
+    }
+}
